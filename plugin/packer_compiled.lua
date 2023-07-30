@@ -159,6 +159,11 @@ _G.packer_plugins = {
     path = "/home/dell-hpm/.local/share/nvim/site/pack/packer/start/undotree",
     url = "https://github.com/mbbill/undotree"
   },
+  ["vim-be-good"] = {
+    loaded = true,
+    path = "/home/dell-hpm/.local/share/nvim/site/pack/packer/start/vim-be-good",
+    url = "https://github.com/ThePrimeagen/vim-be-good"
+  },
   ["vim-fugitive"] = {
     loaded = true,
     path = "/home/dell-hpm/.local/share/nvim/site/pack/packer/start/vim-fugitive",
