@@ -2,7 +2,7 @@ local lsp = require('lsp-zero')
 
 lsp.preset('recommended')
 
-require('mason-lspconfig').setup { ensure_installed = {"lua_ls", "eslint", "tsserver"},}
+require('mason-lspconfig').setup { ensure_installed = {"lua_ls", "eslint", "tsserver", "html"},}
 
 local cmp = require('cmp')
 local cmp_select = {behavior = cmp.SelectBehavior.Select}
