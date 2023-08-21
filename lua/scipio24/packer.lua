@@ -1,5 +1,3 @@
--- This file can be loaded by calling `lua require('plugins')` from your init.vim
-
 local ensure_packer = function()
   local fn = vim.fn
   local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
@@ -25,11 +23,11 @@ return require('packer').startup(function(use)
 	  requires = { {'nvim-lua/plenary.nvim'} }
   }
 
-  use 'navarasu/onedark.nvim'
-
   use ('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
 
   use 'nvim-treesitter/playground'
+
+  use { "catppuccin/nvim", as = "catppuccin" }
 
   use 'nvim-lua/plenary.nvim'
 
