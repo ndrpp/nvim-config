@@ -1,5 +1,9 @@
 # Personal Neovim config
 
+I use Neovim btw!
+
+---
+
 ### Minimal nvim config containing only a reduced amount of main packages:
  - [Lazy]
  - [Treesitter]
@@ -8,6 +12,8 @@
  - [Undotree]
  - [Lsp-zero]
  - [Harpoon]
+
+---
 
 ### Installation
 
