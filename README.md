@@ -24,7 +24,6 @@ git clone git@github.com:andrei3914/nvim-config.git ~/.config/nvim
 
 Navigate to the directory and open it with nvim:
 ```bash
-cd
 cd ~/.config/nvim
 nvim .
 ```
