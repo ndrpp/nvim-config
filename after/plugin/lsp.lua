@@ -3,7 +3,7 @@ local lsp = require('lsp-zero')
 lsp.preset('recommended')
 
 require('mason').setup()
-require('mason-lspconfig').setup({ ensure_installed = {"gopls", "java_language_server", "lua_ls", "eslint", "tsserver", "html", "rust_analyzer", "angularls", "cssls", "jsonls", "yamlls", "marksman", "dockerls", "bashls", "ansiblels", "clangd"}})
+require('mason-lspconfig').setup({ ensure_installed = {"gopls", "jdtls", "lua_ls", "eslint", "tsserver", "html", "rust_analyzer", "angularls", "cssls", "jsonls", "yamlls", "marksman", "dockerls", "bashls", "ansiblels", "clangd"}})
 
 local cmp = require('cmp')
 local cmp_select = {behavior = cmp.SelectBehavior.Select}
