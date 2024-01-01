@@ -4,7 +4,7 @@ I use Neovim btw!
 
 ---
 
-### Minimal nvim config containing only a reduced amount of main packages:
+### Minimal nvim config containing only the following main packages:
  - [Lazy]
  - [Treesitter]
  - [Telescope]
