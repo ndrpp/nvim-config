@@ -19,7 +19,7 @@ I use Neovim btw!
 
 Clone this into the ~/.config/nvim directory:
 ```bash
-git clone git@github.com:andrei3914/nvim-config.git ~/.config/nvim
+git clone git@github.com:ndrpp/nvim-config.git ~/.config/nvim
 ```
 
 Navigate to the directory and open it with nvim:
