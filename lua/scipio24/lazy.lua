@@ -19,7 +19,13 @@ require("lazy").setup({
 	  requires = { {'nvim-lua/plenary.nvim'} }
   },
 
-  {'nvim-treesitter/nvim-treesitter', build = ':TSUpdate'},
+  {
+      'nvim-treesitter/nvim-treesitter',
+      dependencies = {
+          'vrischmann/tree-sitter-templ',
+      },
+      build = ':TSUpdate'
+  },
 
   {'nvim-treesitter/playground'},
 
