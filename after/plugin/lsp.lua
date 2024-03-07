@@ -19,7 +19,8 @@ require('mason-lspconfig').setup({ ensure_installed = {
     "dockerls",
     "bashls",
     "ansiblels",
-    "clangd"
+    "clangd",
+    "templ"
 }})
 
 local cmp = require('cmp')

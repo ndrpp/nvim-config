@@ -15,7 +15,8 @@ require('nvim-treesitter.configs').setup {
       "json",
       "terraform",
       "sql",
-      "go"
+      "go",
+      "templ"
   },
 
   -- Install parsers synchronously (only applied to `ensure_installed`)
