@@ -50,18 +50,18 @@ require("lazy").setup({
   end,
   },
 
---  {'williamboman/mason-lspconfig.nvim'}, -- Optional
---
+  {'williamboman/mason-lspconfig.nvim'}, -- Optional
+
 --  -- Autocompletion
 --  {'hrsh7th/nvim-cmp'},     -- Required
 --  {'hrsh7th/cmp-nvim-lsp'}, -- Required
 --  {'L3MON4D3/LuaSnip'},     -- Required
---
---  {'neovim/nvim-lspconfig'},             -- Required
---  {
---	  'VonHeikemen/lsp-zero.nvim',
---	  branch = 'v2.x',
---},
+
+  {'neovim/nvim-lspconfig'},             -- Required
+  {
+	  'VonHeikemen/lsp-zero.nvim',
+	  branch = 'v2.x',
+  },
 
   {'nvim-tree/nvim-web-devicons'},
 
