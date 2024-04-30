@@ -4,6 +4,7 @@ lsp.preset('recommended')
 
 require('mason').setup()
 require('mason-lspconfig').setup({ ensure_installed = {
+    "astro",
     "gopls",
     --"jdtls",
     "lua_ls",
@@ -23,14 +24,14 @@ require('mason-lspconfig').setup({ ensure_installed = {
     "templ"
 }})
 
---local cmp = require('cmp')
---local cmp_select = {behavior = cmp.SelectBehavior.Select}
+local cmp = require('cmp')
+local cmp_select = {behavior = cmp.SelectBehavior.Select}
 
 lsp.set_preferences({sign_icons = { } })
 
---lsp.setup_nvim_cmp({
---	mapping = cmp_mappings
---})
+lsp.setup_nvim_cmp({
+	mapping = cmp_mappings
+})
 
 lsp.on_attach(function(client, bufnr)
 	local opts = {buffer = bufnr, remap = false}
