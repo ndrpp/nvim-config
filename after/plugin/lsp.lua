@@ -18,6 +18,7 @@ require('mason-lspconfig').setup({ ensure_installed = {
     "yamlls",
     "marksman",
     "dockerls",
+    "terraformls",
     "bashls",
     "ansiblels",
     "clangd",
