@@ -6,12 +6,11 @@ require('mason').setup()
 require('mason-lspconfig').setup({ ensure_installed = {
     "astro",
     "gopls",
-    --"jdtls",
     "lua_ls",
     "eslint",
     "tsserver",
     "html",
-    "rust_analyzer",
+    --"rust_analyzer",
     "angularls",
     "cssls",
     "jsonls",
@@ -21,8 +20,8 @@ require('mason-lspconfig').setup({ ensure_installed = {
     "terraformls",
     "bashls",
     "ansiblels",
-    "clangd",
-    "templ"
+    --"clangd",
+    --"templ",
 }})
 
 local cmp = require('cmp')
