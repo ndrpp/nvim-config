@@ -54,7 +54,11 @@ require("lazy").setup({
   -- Autocompletion
   {'hrsh7th/nvim-cmp'},     -- Required
   {'hrsh7th/cmp-nvim-lsp'}, -- Required
-  {'L3MON4D3/LuaSnip'},     -- Required
+  {
+      'L3MON4D3/LuaSnip',
+      version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+      build = "make install_jsregexp"
+  },     -- Required
 
   {'neovim/nvim-lspconfig'},             -- Required
   {
