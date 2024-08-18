@@ -31,7 +31,10 @@ local cmp_select = {behavior = cmp.SelectBehavior.Select}
 lsp.set_preferences({sign_icons = { } })
 
 lsp.setup_nvim_cmp({
-	mapping = cmp_mappings
+	mapping = cmp_mappings,
+    completion = {
+        autocomplete = false
+    }
 })
 
 lsp.on_attach(function(client, bufnr)
