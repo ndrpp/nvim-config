@@ -8,9 +8,8 @@ require('mason-lspconfig').setup({ ensure_installed = {
     "gopls",
     "lua_ls",
     "eslint",
-    "tsserver",
+    "ts_ls",
     "html",
-    --"rust_analyzer",
     "angularls",
     "cssls",
     "jsonls",
@@ -18,17 +17,26 @@ require('mason-lspconfig').setup({ ensure_installed = {
     "marksman",
     "dockerls",
     "terraformls",
-    --"nil_ls",
     "bashls",
     "ansiblels",
-    --"clangd",
-    --"templ",
 }})
 
 local cmp = require('cmp')
 local cmp_select = {behavior = cmp.SelectBehavior.Select}
 
 lsp.set_preferences({sign_icons = { } })
+lsp.configure('lua_ls', {
+    settings = {
+        Lua = {
+            diagnostics = {
+                globals = { 'vim', 'cmp_mappings' },
+            },
+            workspace = {
+                library = vim.api.nvim_get_runtime_file("", true),
+            },
+        }
+    }
+})
 
 lsp.setup_nvim_cmp({
 	mapping = cmp_mappings,
