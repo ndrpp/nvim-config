@@ -6,6 +6,7 @@ require('mason').setup()
 require('mason-lspconfig').setup({ ensure_installed = {
     "astro",
     "gopls",
+    "rust_analyzer",
     "lua_ls",
     "eslint",
     "ts_ls",
