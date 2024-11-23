@@ -11,6 +11,7 @@ require('nvim-treesitter.configs').setup {
       "query",
       "yaml",
       "css",
+      "python",
       "json",
       "terraform",
       "sql",

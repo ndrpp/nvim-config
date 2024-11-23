@@ -14,6 +14,7 @@ require('mason-lspconfig').setup({ ensure_installed = {
     "angularls",
     "cssls",
     "jsonls",
+    "pyright",
     "yamlls",
     "marksman",
     "dockerls",
