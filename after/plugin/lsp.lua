@@ -2,9 +2,9 @@ local lsp = require("lsp-zero")
 
 lsp.preset("recommended")
 
-require("lspconfig").elixirls.setup({
-	cmd = { "/home/andrei/.local/share/nvim/mason/packages/elixir-ls/language_server.sh" },
-})
+--require("lspconfig").elixirls.setup({
+--	cmd = { "/home/andrei/.local/share/nvim/mason/packages/elixir-ls/language_server.sh" },
+--})
 require("mason").setup()
 require("mason-lspconfig").setup({
 	ensure_installed = {
@@ -24,7 +24,7 @@ require("mason-lspconfig").setup({
 		"terraformls",
 		"bashls",
 		"ansiblels",
-		"elixirls",
+--		"elixirls",
 	},
 })
 
@@ -47,9 +47,9 @@ lsp.configure("lua_ls", {
 
 lsp.setup_nvim_cmp({
 	mapping = cmp_mappings,
-	completion = {
-		autocomplete = false,
-	},
+	--completion = {
+	--	autocomplete = false,
+	--},
 })
 
 lsp.on_attach(function(client, bufnr)
