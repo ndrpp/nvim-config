@@ -2,54 +2,72 @@ local lsp = require("lsp-zero")
 
 lsp.preset("recommended")
 
-require("lspconfig").elixirls.setup({
-	cmd = { "/home/andrei/.local/share/nvim/mason/packages/elixir-ls/language_server.sh" },
-})
 require("mason").setup()
-require("mason-lspconfig").setup({
-	ensure_installed = {
-		"gopls",
-		"rust_analyzer",
-		"lua_ls",
-		"eslint",
-		"ts_ls",
-		"html",
-		"angularls",
-		"cssls",
-		"jsonls",
-		"pyright",
-		"yamlls",
-		"marksman",
-		"dockerls",
-		"terraformls",
-		"bashls",
-		"ansiblels",
-		"elixirls",
-	},
+
+vim.lsp.config("elixirls", {
+	cmd = { "/home/andrei/.local/share/nvim/mason/packages/elixir-ls/language_server.sh" },
 })
 
 local cmp = require("cmp")
 local cmp_select = { behavior = cmp.SelectBehavior.Select }
 
 lsp.set_preferences({ sign_icons = {} })
-lsp.configure("lua_ls", {
-	settings = {
-		Lua = {
-			diagnostics = {
-				globals = { "vim", "cmp_mappings" },
-			},
-			workspace = {
-				library = vim.api.nvim_get_runtime_file("", true),
-			},
-		},
-	},
+
+vim.lsp.config("denols", {
+	single_file_support = false,
+	root_markers = { "deno.json" },
+})
+vim.lsp.config("ts_ls", {
+	single_file_support = false,
+	root_markers = { "package.json" },
+})
+
+vim.lsp.enable({
+	"lua_ls",
+	"ts_ls",
+	"denols",
+	"gopls",
+	"rust_analyzer",
+	"eslint",
+	"html",
+	"angularls",
+	"cssls",
+	"jsonls",
+	"pyright",
+	"yamlls",
+	"marksman",
+	"dockerls",
+	"terraformls",
+	"bashls",
+	"ansiblels",
+	"elixirls",
 })
 
 lsp.setup_nvim_cmp({
 	mapping = cmp_mappings,
-	--completion = {
-	--	autocomplete = false,
-	--},
+	completion = {
+		autocomplete = false,
+	},
+})
+
+vim.api.nvim_create_autocmd("LspAttach", {
+	callback = function(args)
+		local client = vim.lsp.get_client_by_id(args.data.client_id)
+
+		if client.name == "denols" then
+			for _, c in ipairs(vim.lsp.get_active_clients({ bufnr = args.buf })) do
+				if c.name == "ts_ls" then
+					c.stop()
+					vim.notify("Stopped ts_ls in favor of denols", vim.log.levels.INFO)
+				end
+			end
+		elseif client.name == "ts_ls" then
+			if require("lspconfig").util.root_pattern("deno.json")(vim.fn.expand("%:p")) then
+				client.stop()
+				vim.notify("Blocked ts_ls in Deno project", vim.log.levels.WARN)
+			end
+		end
+	end,
 })
 
 lsp.on_attach(function(client, bufnr)
@@ -68,10 +86,10 @@ lsp.on_attach(function(client, bufnr)
 		vim.diagnostic.open_float()
 	end, opts)
 	vim.keymap.set("n", "[d", function()
-		vim.diagnostic.goto_next()
+		vim.diagnostic.jump({ count = 1, float = true })
 	end, opts)
 	vim.keymap.set("n", "]d", function()
-		vim.diagnostic.goto_prev()
+		vim.diagnostic.jump({ count = -1, float = true })
 	end, opts)
 	vim.keymap.set("n", "<leader>vca", function()
 		vim.lsp.buf.code_action()
