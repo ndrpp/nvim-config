@@ -25,7 +25,6 @@ vim.lsp.config("ts_ls", {
 vim.lsp.enable({
 	"lua_ls",
 	"ts_ls",
-	"denols",
 	"gopls",
 	"rust_analyzer",
 	"eslint",
@@ -45,29 +44,9 @@ vim.lsp.enable({
 
 lsp.setup_nvim_cmp({
 	mapping = cmp_mappings,
-	completion = {
-		autocomplete = false,
-	},
-})
-
-vim.api.nvim_create_autocmd("LspAttach", {
-	callback = function(args)
-		local client = vim.lsp.get_client_by_id(args.data.client_id)
-
-		if client.name == "denols" then
-			for _, c in ipairs(vim.lsp.get_active_clients({ bufnr = args.buf })) do
-				if c.name == "ts_ls" then
-					c.stop()
-					vim.notify("Stopped ts_ls in favor of denols", vim.log.levels.INFO)
-				end
-			end
-		elseif client.name == "ts_ls" then
-			if require("lspconfig").util.root_pattern("deno.json")(vim.fn.expand("%:p")) then
-				client.stop()
-				vim.notify("Blocked ts_ls in Deno project", vim.log.levels.WARN)
-			end
-		end
-	end,
+	--completion = {
+	--	autocomplete = false,
+	--},
 })
 
 lsp.on_attach(function(client, bufnr)
