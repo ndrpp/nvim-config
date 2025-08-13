@@ -44,9 +44,9 @@ vim.lsp.enable({
 
 lsp.setup_nvim_cmp({
 	mapping = cmp_mappings,
-	--completion = {
-	--	autocomplete = false,
-	--},
+	completion = {
+		autocomplete = false,
+	},
 })
 
 lsp.on_attach(function(client, bufnr)
