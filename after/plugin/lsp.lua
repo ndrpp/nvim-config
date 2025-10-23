@@ -22,24 +22,29 @@ vim.lsp.config("ts_ls", {
 	root_markers = { "package.json" },
 })
 
+vim.lsp.config("solidity", {
+    cmd = { 'nomicfoundation-solidity-language-server', '--stdio' }
+})
+
 vim.lsp.enable({
-	"lua_ls",
-	"ts_ls",
-	"gopls",
-	"rust_analyzer",
-	"eslint",
-	"html",
-	"angularls",
-	"cssls",
-	"jsonls",
-	"pyright",
-	"yamlls",
-	"marksman",
-	"dockerls",
-	"terraformls",
-	"bashls",
-	"ansiblels",
-	"elixirls",
+    "lua_ls",
+    "ts_ls",
+    "gopls",
+    "rust_analyzer",
+    "eslint",
+    "html",
+    "angularls",
+    "cssls",
+    "jsonls",
+    "pyright",
+    "yamlls",
+    "marksman",
+    "dockerls",
+    "terraformls",
+    "bashls",
+    "ansiblels",
+    "elixirls",
+    "solidity"
 })
 
 lsp.setup_nvim_cmp({
