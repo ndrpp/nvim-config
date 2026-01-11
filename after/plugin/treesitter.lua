@@ -1,4 +1,4 @@
-require("nvim-treesitter.configs").setup({
+require("nvim-treesitter").setup({
 	ensure_installed = {
 		"rust",
 		"c",
@@ -15,9 +15,6 @@ require("nvim-treesitter.configs").setup({
 		"terraform",
 		"sql",
 		"go",
-		"elixir",
-		"eex",
-		"heex", --elixir related
 	},
 
 	sync_install = false,

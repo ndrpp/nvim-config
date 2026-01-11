@@ -19,28 +19,24 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
 require("lazy").setup({
-	{
-		"nvim-telescope/telescope.nvim",
-		tag = "0.1.2",
-		-- or                            , branch = '0.1.x',
-		requires = { { "nvim-lua/plenary.nvim" } },
-	},
+    {
+        "nvim-telescope/telescope.nvim",
+        tag = "0.1.2",
+        -- or                            , branch = '0.1.x',
+        requires = { { "nvim-lua/plenary.nvim" } },
+    },
 
 	{
 		"nvim-treesitter/nvim-treesitter",
-		dependencies = {
-			"vrischmann/tree-sitter-templ",
-		},
+        lazy = false,
 		build = ":TSUpdate",
 	},
 
-	{ "nvim-treesitter/playground" },
-
 	-- COLORSCHEMES
-	--{ "catppuccin/nvim", as = "catppuccin" },
+	{ "catppuccin/nvim", as = "catppuccin" },
 	--{"rose-pine/neovim", as = "rose-pine"},
 	--{ "rebelot/kanagawa.nvim" },
-    { "ellisonleao/gruvbox.nvim" },
+    --{ "ellisonleao/gruvbox.nvim" },
 
 	{ "nvim-lua/plenary.nvim" },
 

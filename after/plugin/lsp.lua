@@ -4,19 +4,11 @@ lsp.preset("recommended")
 
 require("mason").setup()
 
-vim.lsp.config("elixirls", {
-	cmd = { "/home/andrei/.local/share/nvim/mason/packages/elixir-ls/language_server.sh" },
-})
-
 local cmp = require("cmp")
 local cmp_select = { behavior = cmp.SelectBehavior.Select }
 
 lsp.set_preferences({ sign_icons = {} })
 
-vim.lsp.config("denols", {
-	single_file_support = false,
-	root_markers = { "deno.json" },
-})
 vim.lsp.config("ts_ls", {
 	single_file_support = false,
 	root_markers = { "package.json" },
@@ -43,7 +35,6 @@ vim.lsp.enable({
     "terraformls",
     "bashls",
     "ansiblels",
-    "elixirls",
     "solidity"
 })
 
