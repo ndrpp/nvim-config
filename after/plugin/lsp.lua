@@ -25,7 +25,6 @@ vim.lsp.enable({
     "rust_analyzer",
     "eslint",
     "html",
-    "angularls",
     "cssls",
     "jsonls",
     "pyright",
