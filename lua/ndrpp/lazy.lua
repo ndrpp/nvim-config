@@ -21,7 +21,6 @@ vim.g.maplocalleader = "\\"
 require("lazy").setup({
     {
         "nvim-telescope/telescope.nvim",
-        tag = "0.2.2",
         requires = { { "nvim-lua/plenary.nvim" } },
     },
 
