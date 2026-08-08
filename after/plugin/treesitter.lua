@@ -15,11 +15,12 @@ require("nvim-treesitter").setup({
 		"terraform",
 		"sql",
 		"go",
+        "svelte"
 	},
 
 	sync_install = false,
 
-	auto_install = true,
+	auto_install = false,
 
 	highlight = {
 		enable = true,

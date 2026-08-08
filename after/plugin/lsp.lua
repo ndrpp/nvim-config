@@ -17,6 +17,7 @@ vim.lsp.enable({
     "pylyzer",
     "rust-analyzer",
     "stylelint",
+    "svelte-language-server",
     "typescript-language-server",
     "vim-language-server",
     "yaml-language-server"
