@@ -21,8 +21,7 @@ vim.g.maplocalleader = "\\"
 require("lazy").setup({
     {
         "nvim-telescope/telescope.nvim",
-        tag = "0.1.2",
-        -- or                            , branch = '0.1.x',
+        tag = "0.2.2",
         requires = { { "nvim-lua/plenary.nvim" } },
     },
 
@@ -46,27 +45,11 @@ require("lazy").setup({
 
 	{ "tpope/vim-fugitive" },
 
-	{ -- Optional
+	{ 
 		"williamboman/mason.nvim",
 		run = function()
 			pcall(vim.api.nvim_command, "MasonUpdate")
 		end,
-	},
-
-	{ "neovim/nvim-lspconfig" }, -- Required
-
-	-- Autocompletion
-	{ "hrsh7th/nvim-cmp" }, -- Required
-	{ "hrsh7th/cmp-nvim-lsp" }, -- Required
-
-	{
-		"L3MON4D3/LuaSnip",
-		version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
-		build = "make install_jsregexp",
-	}, -- Required
-	{
-		"VonHeikemen/lsp-zero.nvim",
-		branch = "v2.x",
 	},
 
 	{ "nvim-tree/nvim-web-devicons" },
