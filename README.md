@@ -10,7 +10,6 @@ I use Neovim btw!
  - [Telescope]
  - [Fugitive]
  - [Undotree]
- - [Lsp-zero]
  - [Harpoon]
 
 ---
