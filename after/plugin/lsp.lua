@@ -9,6 +9,7 @@ vim.lsp.enable({
     "bash-language-server",
     "biome",
     "clangd",
+    "eslint",
     "gopls",
     "html-lsp",
     "intelephense",
