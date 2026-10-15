@@ -5,7 +5,6 @@ I use Neovim btw!
 ---
 
 ### Minimal nvim config containing only the following main packages:
- - [Lazy]
  - [Treesitter]
  - [Telescope]
  - [Fugitive]
