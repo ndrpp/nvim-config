@@ -7,6 +7,7 @@ vim.api.nvim_create_autocmd('PackChanged', {
         end
     end
 })
+
 vim.api.nvim_create_autocmd('PackChanged', {
     callback = function(ev)
         local name, kind = ev.data.spec.name, ev.data.kind
@@ -27,5 +28,8 @@ vim.pack.add({
     'https://github.com/nvim-lua/plenary.nvim',
     'https://github.com/nvim-telescope/telescope.nvim',
     'https://github.com/nvim-treesitter/nvim-treesitter',
-    'https://github.com/mbbill/undotree'
+    'https://github.com/mbbill/undotree',
+    'https://github.com/rafamadriz/friendly-snippets',
+    'https://github.com/saghen/blink.lib',
+    'https://github.com/Saghen/blink.cmp'
 })
