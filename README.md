@@ -10,6 +10,7 @@ I use Neovim btw!
  - [Fugitive]
  - [Undotree]
  - [Harpoon]
+ - [Blink.cmp]
 
 ---
 
